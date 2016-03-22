@@ -1,6 +1,6 @@
 {
   "name": "leaflet-filterable-layercontrol",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Leaflet layer control with filterable layer list",
   "main": "dist/leaflet.filterablelayercontrol.min.js",
   "directories": {

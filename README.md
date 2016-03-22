@@ -24,15 +24,20 @@ Add groupings to your overlay layers object, and swap out the default layer
 control with the new one.
 
 ```javascript
-var groupedOverlays = {
-  "Landmarks": {
-    "Motorways": motorways,
-    "Cities": cities
-  },
-  "Points of Interest": {
-    "Restaurants": restaurants
-  }
+var map = L.map('map', {
+  center: [39.73, -104.99],
+  zoom: 10,
+  layers: [ExampleData.Basemaps.Grayscale, ExampleData.LayerGroups.cities]
+});
+
+// Overlay layers are grouped
+var overlays = {
+  "Cities": ExampleData.LayerGroups.cities,
+  "Restaurants": ExampleData.LayerGroups.restaurants,
+  "Dogs": ExampleData.LayerGroups.dogs,
+  "Cats": ExampleData.LayerGroups.cats
 };
 
-L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+// Use the custom grouped layer control, not "L.control.layers"
+L.control.FilterableLayers(ExampleData.Basemaps, overlays).addTo(map);
 ```
